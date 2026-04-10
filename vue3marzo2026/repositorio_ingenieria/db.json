@@ -1,0 +1,211 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Administrador",
+      "email": "admin@email.com",
+      "password": "123456"
+    }
+  ],
+  "proyectos": [
+    {
+      "id": 1,
+      "nombre": "Subestación Eléctrica FERB",
+      "descripcion": "Ampliacion de subestación eléctrica",
+      "cliente": "EMFE",
+      "fechaInicioEstimado": "2026-01-01",
+      "fechaFinalizacionEstimada": "2026-12-31",
+      "estado": "suspendido",
+      "userId": 1
+    },
+    {
+      "nombre": "SE Nva Jerusalen",
+      "descripcion": "ampliacion bahia de linea Warnes 115 KV",
+      "cliente": "EMFE",
+      "fechaInicioEstimado": "2026-10-01",
+      "fechaFinalizacionEstimada": "2027-10-01",
+      "estado": "activo",
+      "userId": 1,
+      "id": 2
+    }
+  ],
+  "etapas": [
+    {
+      "id": 1,
+      "orden": 1,
+      "nombre": "Diseño Conceptual",
+      "subdocumentos": [
+        "Vista en planta General",
+        "Plan de compras",
+        "Cronograma base",
+        "Documento de validación"
+      ]
+    },
+    {
+      "id": 2,
+      "orden": 2,
+      "nombre": "Adquisición de Materiales",
+      "subdocumentos": [
+        "Equipos de potencia AT",
+        "Transformador",
+        "Equipos de potencia MT",
+        "Tableros de control y protección",
+        "Tableros auxiliares",
+        "Terminales y conectores AT/MT",
+        "Relés",
+        "Medidores",
+        "Cables de control y protección"
+      ]
+    },
+    {
+      "id": 3,
+      "orden": 3,
+      "nombre": "Diseño Básico",
+      "subdocumentos": [
+        "Vista en planta General",
+        "Vista en planta",
+        "Vistas en corte",
+        "Malla PAT",
+        "Apantallamiento",
+        "Arquitectura de comunicación"
+      ]
+    },
+    {
+      "id": 4,
+      "orden": 4,
+      "nombre": "Planos y Manuales",
+      "subdocumentos": [
+        "Equipos AT",
+        "Equipos MT",
+        "Tableros de control y protección",
+        "Tableros auxiliares",
+        "Materiales"
+      ]
+    },
+    {
+      "id": 5,
+      "orden": 5,
+      "nombre": "Diseño de Detalle",
+      "subdocumentos": [
+        "Vista en planta General",
+        "Vista en planta",
+        "Vistas en corte",
+        "Malla PAT",
+        "Apantallamiento",
+        "Arquitectura de comunicación",
+        "Planos de control y protección",
+        "Planillas de cableado",
+        "Configuraciones de equipos"
+      ]
+    },
+    {
+      "id": 6,
+      "orden": 6,
+      "nombre": "Obras Civiles",
+      "subdocumentos": [
+        "Planos de sala de control",
+        "Planos de sala MT",
+        "Planos de vías",
+        "Planos de bases y canales",
+        "Plano general"
+      ]
+    },
+    {
+      "id": 7,
+      "orden": 7,
+      "nombre": "Montaje Electromecánico",
+      "subdocumentos": [
+        "Vista en planta General",
+        "Vista en planta",
+        "Vistas en corte",
+        "Malla PAT",
+        "Apantallamiento",
+        "Arquitectura de comunicación"
+      ]
+    },
+    {
+      "id": 8,
+      "orden": 8,
+      "nombre": "Documentos de Protección",
+      "subdocumentos": [
+        "Estudio de protección",
+        "Ajustes",
+        "Notas enviadas"
+      ]
+    },
+    {
+      "id": 9,
+      "orden": 9,
+      "nombre": "Documentos de Activación",
+      "subdocumentos": [
+        "Planilla de activos",
+        "Planilla de materiales"
+      ]
+    },
+    {
+      "id": 10,
+      "orden": 10,
+      "nombre": "Planos y Documentos As Built",
+      "subdocumentos": []
+    }
+  ],
+  "documentos": [
+    {
+      "id": 1,
+      "proyectoId": 1,
+      "etapaId": 1,
+      "titulo": "Vista en planta General",
+      "descripcion": "Vista general del proyecto",
+      "tipo": "plano",
+      "version": "1.0",
+      "autor": "Administrador",
+      "fecha": "2026-01-10",
+      "archivo": "",
+      "estado": "aprobado GIPD",
+      "observaciones": "",
+      "aprobadoPor": ""
+    }
+  ],
+  "estados": [
+    {
+      "id": 1,
+      "nombre": "inicial",
+      "color": "#6c757d"
+    },
+    {
+      "id": 2,
+      "nombre": "revision",
+      "color": "#ffc107"
+    },
+    {
+      "id": 3,
+      "nombre": "aprobado GIPD",
+      "color": "#17a2b8"
+    },
+    {
+      "id": 4,
+      "nombre": "aprobado GIPM",
+      "color": "#007bff"
+    },
+    {
+      "id": 5,
+      "nombre": "aprobado GIP",
+      "color": "#6610f2"
+    },
+    {
+      "id": 6,
+      "nombre": "rechazado",
+      "color": "#dc3545"
+    },
+    {
+      "id": 7,
+      "nombre": "Vfinal",
+      "color": "#28a745"
+    },
+    {
+      "id": 8,
+      "nombre": "VAsbuilt",
+      "color": "#fd7e14"
+    }
+  ]
+}
