@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { getProyectos, deleteProyecto } from '@/services/proyectoService'
 
@@ -20,12 +20,12 @@ const cargarProyectos = async () => {
   }
 }
 
-const proyectosFiltrados = () => {
-  return proyectos.value.filter(p =>
+const proyectosFiltrados = computed(() =>
+  proyectos.value.filter(p =>
     p.nombre.toLowerCase().includes(busqueda.value.toLowerCase()) ||
     p.cliente.toLowerCase().includes(busqueda.value.toLowerCase())
   )
-}
+)
 
 const eliminar = async (id) => {
   if (confirm('¿Estás seguro de eliminar este proyecto?')) {
@@ -55,13 +55,13 @@ onMounted(cargarProyectos)
 
     <div v-if="loading" class="text-center">Cargando...</div>
 
-    <div v-else-if="proyectosFiltrados().length === 0" class="text-center text-muted">
+    <div v-else-if="proyectosFiltrados.length === 0" class="text-center text-muted">
       No se encontraron proyectos.
     </div>
 
     <div v-else class="row">
       <div
-        v-for="proyecto in proyectosFiltrados()"
+        v-for="proyecto in proyectosFiltrados"
         :key="proyecto.id"
         class="col-md-4 mb-4"
       >
@@ -70,7 +70,7 @@ onMounted(cargarProyectos)
             <h5 class="card-title">{{ proyecto.nombre }}</h5>
             <p class="card-text text-muted">{{ proyecto.descripcion }}</p>
             <p><strong>Cliente:</strong> {{ proyecto.cliente }}</p>
-            <p><strong>Fecha:</strong> {{ proyecto.fechaInicio }}</p>
+            <p><strong>Fecha inicio:</strong> {{ proyecto.fechaInicioEstimado }}</p>
             <span
               class="badge"
               :class="proyecto.estado === 'activo' ? 'bg-success' : 'bg-secondary'"

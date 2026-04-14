@@ -204,7 +204,7 @@ onMounted(cargarDatos)
 
             <div class="d-flex gap-2">
               <button @click="guardar" class="btn btn-primary">Actualizar</button>
-              <router-link :to="`/proyectos/${id}/documentos`" class="btn btn-secondary">
+              <router-link :to="`/proyectos/${props.id}/documentos`" class="btn btn-secondary">
                 Cancelar
               </router-link>
             </div>

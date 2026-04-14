@@ -1,0 +1,5 @@
+# PDF del enunciado - no incluir en el repositorio
+*.pdf
+
+# Dependencias
+node_modules/

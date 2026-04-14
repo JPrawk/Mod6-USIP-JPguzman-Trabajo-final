@@ -1,132 +1,114 @@
-# 📝 Proyecto TODO - Vue 3 + JSON Server Auth
+# Repositorio de Ingeniería — Trabajo Final Módulo 6
 
-## 📌 Descripción
+Aplicación web desarrollada con **Vue 3 + Vite** como trabajo final del Módulo 6 del Diplomado Fullstack USIP.
 
-Este proyecto forma parte del módulo de **Vue 3** del Diplomado Fullstack.  
-Tiene como objetivo desarrollar una aplicación web moderna tipo **TODO**, donde los usuarios puedan gestionar tareas de manera eficiente.
-
-La aplicación permite realizar operaciones CRUD, autenticación de usuarios y consumo de API, aplicando buenas prácticas de desarrollo frontend.
+Permite gestionar proyectos de ingeniería eléctrica y sus documentos técnicos por etapa, con flujo de aprobación, buscador, filtros y autenticación de usuarios.
 
 ---
 
-## 🎯 Objetivos del Proyecto
+## Tecnologías
 
-- Aplicar conceptos de Vue 3 (Composition API / Options API)
-- Consumir APIs REST usando Axios
-- Implementar autenticación con JSON Server Auth
-- Gestionar rutas públicas y protegidas
-- Utilizar variables de entorno
-- Desarrollar una interfaz moderna y responsiva
-
----
-
-## 🧩 Funcionalidades
-
-### 🔐 Autenticación
-- Registro de usuarios
-- Inicio de sesión
-- Manejo de token (JWT)
-- Protección de rutas
-
-### 📋 Gestión de tareas (TODO)
-- Crear tarea
-- Listar tareas
-- Editar tarea
-- Eliminar tarea
-
-
-### 🔎 Búsqueda y filtros
-- Buscador de tareas por titulo y contenido
-- Filtro por completado
-
-### 🧭 Navegación
-- Rutas públicas y privadas
-- Ruta dinámica 
-
----
-
-## 🛠️ Tecnologías utilizadas
-
-- Vue 3
+- Vue 3 (Composition API, `<script setup>`)
 - Vite
+- Vue Router 4 (rutas dinámicas, protección de rutas)
 - Axios
-- Vue Router
-- JSON Server Auth
-- CSS / SCSS
+- JSON Server + JSON Server Auth
+- Bootstrap 5
+- Variables de entorno (`.env`)
 
 ---
 
-## ⚙️ Configuración del entorno
+## Entidades del sistema
 
-Crear un archivo `.env` en la raíz del proyecto:
-
-```
-VITE_API_URL=http://localhost:3000
-```
+| Entidad | Descripción |
+|---------|-------------|
+| **Proyectos** | Proyectos de ingeniería eléctrica |
+| **Documentos** | Planos y documentos técnicos por etapa |
+| **Etapas** | Fases del proyecto (Diseño, Adquisición, Montaje, etc.) |
+| **Estados** | Flujo de aprobación de documentos |
 
 ---
 
-## 💻 Instalación del proyecto
+## Requisitos previos
 
+- Node.js `>= 20.19.0` o `>= 22.12.0`
+- npm
+
+---
+
+## Instalación y ejecución
+
+### 1. Clonar el repositorio
+
+```bash
+git clone https://github.com/JPrawk/Mod6-USIP-JPguzman-Trabajo-final.git
+cd Mod6-USIP-JPguzman-Trabajo-final/vue3marzo2026/repositorio_ingenieria
 ```
+
+### 2. Instalar dependencias
+
+```bash
 npm install
 ```
 
----
+### 3. Configurar variables de entorno
 
-## 🚀 Ejecución en desarrollo
+Crear un archivo `.env` en la carpeta `repositorio_ingenieria/`:
 
 ```
+VITE_API_URL=http://localhost:3000
+VITE_TIMEOUT=3000
+```
+
+### 4. Ejecutar el proyecto
+
+El comando `npm run dev` levanta simultáneamente el **frontend (Vite)** y el **servidor backend** usando `concurrently`:
+
+```bash
 npm run dev
 ```
 
----
-
-## 🏗️ Compilación para producción
-
-```
-npm run build
-```
+- Frontend: [http://localhost:5173](http://localhost:5173)
+- Backend: [http://localhost:3000](http://localhost:3000)
 
 ---
 
-## 🗄️ Backend (JSON Server Auth)
+## Comandos disponibles
 
-El proyecto incluye un archivo `db.json` que simula la base de datos.
-
-### Instalar json server version 0.17.1
-
-```
-npm install -g  json-server@0.17.1
-```
-
-```
-npm install -g json-server-auth@2.1.0
-```
-
-### ▶️ Ejecutar backend
-
-```
-json-server-auth db.json --port 3000 -r routes.json
-```
+| Comando | Descripción |
+|---------|-------------|
+| `npm run dev` | Inicia frontend + backend juntos |
+| `npm run server` | Solo el backend (JSON Server) en puerto 3000 |
+| `npm run build` | Compila el proyecto para producción |
+| `npm run preview` | Vista previa del build de producción |
 
 ---
 
+## Usuario de prueba
 
-## 📚 Recomendaciones
+El archivo `db.json` incluye un usuario administrador para comenzar:
 
-### IDE
-- VS Code + extensión Vue (Volar)
-- Deshabilitar Vetur
-
-### Navegador
-- Vue Devtools
-- Activar Custom Object Formatter
+| Campo | Valor |
+|-------|-------|
+| Email | `admin@email.com` |
+| Password | `123456` |
 
 ---
 
-## 👨‍💻 Autor
+## Funcionalidades implementadas
 
-Proyecto desarrollado como parte del Diplomado Fullstack.
+- **CRUD completo** de Proyectos y Documentos
+- **Relación** entre entidades: Proyectos → Documentos → Etapas
+- **Filtro** de documentos por etapa y por estado
+- **Buscador** de proyectos (nombre/cliente) y documentos (título/proyecto)
+- **Ruta dinámica**: `/proyectos/:id/documentos/:docId/editar`
+- **Variables de entorno**: `VITE_API_URL`, `VITE_TIMEOUT`
+- **Autenticación**: registro, login, token JWT, logout
+- **Protección de rutas**: `meta: { requiresAuth: true }` + `router.beforeEach`
+- **Diseño responsivo** con Bootstrap 5
 
+---
 
+## Autor
+
+**Juan P. Guzman** — Diplomado Fullstack USIP, Módulo 6

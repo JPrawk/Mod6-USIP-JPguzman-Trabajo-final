@@ -11,13 +11,14 @@ const form = ref({
   nombre: '',
   descripcion: '',
   cliente: '',
-  fechaInicio: '',
+  fechaInicioEstimado: '',
+  fechaFinalizacionEstimada: '',
   estado: 'activo',
   userId: appMemory.get('userId')
 })
 
 const guardar = async () => {
-  if (!form.value.nombre || !form.value.cliente || !form.value.fechaInicio) {
+  if (!form.value.nombre || !form.value.cliente || !form.value.fechaInicioEstimado) {
     error.value = 'Por favor completa todos los campos requeridos.'
     return
   }
@@ -56,8 +57,13 @@ const guardar = async () => {
             </div>
 
             <div class="mb-3">
-              <label class="form-label">Fecha de Inicio *</label>
-              <input v-model="form.fechaInicio" type="date" class="form-control" />
+              <label class="form-label">Fecha de Inicio Estimada *</label>
+              <input v-model="form.fechaInicioEstimado" type="date" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Fecha de Finalización Estimada</label>
+              <input v-model="form.fechaFinalizacionEstimada" type="date" class="form-control" />
             </div>
 
             <div class="mb-3">

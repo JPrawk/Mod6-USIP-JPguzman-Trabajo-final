@@ -132,7 +132,7 @@ onMounted(cargarDatos)
             </span>
             <div class="ms-auto d-flex gap-1">
               <router-link
-                :to="`/proyectos/${id}/documentos/${getDocumento(etapa.id, sub).id}/editar`"
+                :to="`/proyectos/${props.id}/documentos/${getDocumento(etapa.id, sub).id}/editar`"
                 class="btn btn-sm btn-outline-warning py-0"
               >✏️</router-link>
               <button
@@ -146,7 +146,7 @@ onMounted(cargarDatos)
             <span class="badge bg-secondary ms-2">pendiente</span>
             <div class="ms-auto">
               <router-link
-                :to="`/proyectos/${id}/documentos/nuevo?etapa=${etapa.id}&titulo=${encodeURIComponent(sub)}`"
+                :to="`/proyectos/${props.id}/documentos/nuevo?etapa=${etapa.id}&titulo=${encodeURIComponent(sub)}`"
                 class="btn btn-sm btn-outline-primary py-0"
               >+ Cargar</router-link>
             </div>
